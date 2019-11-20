@@ -1,0 +1,70 @@
+
+*,
+*:before,
+*:after{ 
+	box-sizing: border-box; 
+	/*点击时白色遮罩为透明*/
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0); 
+}
+
+body, div, p, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, input, select, option, table, th, tr, td, textarea { 
+	margin: 0; 
+	padding: 0; 
+}
+
+h1, h2, h3, h4, h5, h6 {   
+	font-weight: normal; 
+	font: inherit; 
+}
+
+ul, ol { 
+	list-style: none; 
+}
+
+input, button, img, textarea, iframe { 
+	border: none; 
+	outline: none; 
+}
+
+button, input, select, textarea { 
+	font: inherit; 
+}
+
+em, b, i, strong { 
+	font-style: normal; 
+	font-weight: normal; 
+}
+
+input { 
+	appearance: none; 
+}
+
+img { 
+	/*max-width: 100%; max-height: 100%; 有时会和width: 100%;有冲突*/
+	vertical-align: middle; 
+}
+
+table { 
+	border-collapse: collapse; 
+	border-spacing: 0; 
+}
+
+a { 
+	text-decoration: none; 
+	color: inherit; 
+}
+
+.clearfix { 
+	zoom: 1; 
+}
+
+.clearfix:after { 
+	content: ""; 
+	display: table; 
+	clear: both; 
+}
+
+body { 
+	font-size: 14px; 
+	font-family: Microsoft YaHei, "微软雅黑", Tahoma, Geneva, sans-serif;
+}

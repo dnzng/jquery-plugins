@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>marquee</title>
+	<link rel="stylesheet" href="static/css/reset.css">
+	<style type="text/css">
+		.marquee-container{
+			margin-bottom: 10px;
+			border: 1px solid steelblue;
+			overflow: hidden;
+			position: relative;
+		}
+		.marquee-wrapper{
+			width: 100%;
+			height: 100%;
+		}
+		.marquee-slide{
+			width: 300px;
+		}
+
+		.marquee-horizontal-none,
+		.marquee-left,
+		.marquee-right{
+			width: 400px;
+			height: 84px;
+		}
+	
+		.marquee-vertical-none,
+		.marquee-top,
+		.marquee-bottom{
+			display: inline-block;
+			width: 90px;
+			height: 200px;
+			margin-right: 10px;
+		}
+
+		.marquee-txt-top{
+			width: 300px;
+			height: 50px
+		}
+
+		.marquee-txt-left{
+			width: 300px;
+			height: 20px
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="marquee-container marquee-horizontal-none">
+		<div class="marquee-wrapper">
+			<div class="marquee-slide"><img src="static/images/01.jpg"></div>
+			<div class="marquee-slide"><img src="static/images/02.jpg"></div>
+			<div class="marquee-slide"><img src="static/images/03.jpg"></div>
+		</div>
+	</div>
+	
+	<div class="marquee-container marquee-left">
+		<div class="marquee-wrapper">
+			<div class="marquee-slide"><img src="static/images/01.jpg"></div>
+			<div class="marquee-slide"><img src="static/images/02.jpg"></div>
+			<div class="marquee-slide"><img src="static/images/03.jpg"></div>
+			<div class="marquee-slide"><img src="static/images/04.jpg"></div>
+		</div>
+	</div>
+	
+	<div class="marquee-container marquee-right">
+		<div class="marquee-wrapper">
+			<div class="marquee-slide"><img src="static/images/01.jpg"></div>
+			<div class="marquee-slide"><img src="static/images/02.jpg"></div>
+			<div class="marquee-slide"><img src="static/images/03.jpg"></div>
+			<div class="marquee-slide"><img src="static/images/04.jpg"></div>
+		</div>
+	</div>
+	
+	<div class="marquee-container marquee-vertical-none">
+		<div class="marquee-wrapper">
+			<div class="marquee-slide"><img src="static/images/01.jpg"></div>
+			<div class="marquee-slide"><img src="static/images/02.jpg"></div>
+			<div class="marquee-slide"><img src="static/images/03.jpg"></div>
+		</div>
+	</div>
+	
+	<div class="marquee-container marquee-top">
+		<div class="marquee-wrapper">
+			<div class="marquee-slide"><img src="static/images/01.jpg"></div>
+			<div class="marquee-slide"><img src="static/images/02.jpg"></div>
+			<div class="marquee-slide"><img src="static/images/03.jpg"></div>
+			<div class="marquee-slide"><img src="static/images/04.jpg"></div>
+		</div>
+	</div>
+	
+	<div class="marquee-container marquee-bottom">
+		<div class="marquee-wrapper">
+			<div class="marquee-slide"><img src="static/images/01.jpg"></div>
+			<div class="marquee-slide"><img src="static/images/02.jpg"></div>
+			<div class="marquee-slide"><img src="static/images/03.jpg"></div>
+			<div class="marquee-slide"><img src="static/images/04.jpg"></div>
+		</div>
+	</div>
+	
+	<div class="marquee-container marquee-txt-top">
+		<div class="marquee-wrapper">
+			<div class="marquee-slide">marquee1marquee1marquee1marquee1</div>
+			<div class="marquee-slide">marquee2marquee1marquee2marquee2</div>
+			<div class="marquee-slide">marquee3marquee1marquee3marquee3</div>
+			<div class="marquee-slide">marquee4marquee1marquee4marquee4</div>
+		</div>
+	</div>
+	
+	<div class="marquee-container marquee-txt-left">
+		<div class="marquee-wrapper">
+			<div class="marquee-slide">marquee1marquee1marquee1marquee1</div>
+			<div class="marquee-slide">marquee2marquee1marquee2marquee2</div>
+			<div class="marquee-slide">marquee3marquee1marquee3marquee3</div>
+			<div class="marquee-slide">marquee4marquee1marquee4marquee4</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="static/lib/jquery.min.js"></script>
+	<script type="text/javascript" src="../src/js/sky.marquee.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			$('.marquee-horizontal-none').skyMarquee({
+				direction: 'left',				//方向
+				spaceBetween: 10,				//间隔
+				itemsPerView: 3,				//显示个数
+				speed: 1,						//速度
+				time: 30						//每隔time移动一个speed,单位ms
+			});
+
+			$('.marquee-left').skyMarquee({
+				direction: 'left',
+				spaceBetween: 10,
+				itemsPerView: 3,
+				speed: 1
+			});
+
+			$('.marquee-right').skyMarquee({
+				direction: 'right',
+				spaceBetween: 10,
+				itemsPerView: 3,
+				speed: 1
+			});
+
+			$('.marquee-vertical-none').skyMarquee({
+				direction: 'top',
+				spaceBetween: 10,
+				itemsPerView: 3,
+				speed: 1
+			});
+
+			$('.marquee-top').skyMarquee({
+				direction: 'top',
+				spaceBetween: 10,
+				itemsPerView: 3,
+				speed: 1
+			});
+
+			$('.marquee-bottom').skyMarquee({
+				direction: 'bottom',
+				spaceBetween: 10,
+				itemsPerView: 3,
+				speed: 1
+			});
+
+			$('.marquee-txt-top').skyMarquee({
+				direction: 'top',
+				spaceBetween: 2,
+				itemsPerView: 3,
+				speed: 1
+			});
+
+			$('.marquee-txt-left').skyMarquee({
+				direction: 'left',
+				spaceBetween: 5,
+				itemsPerView: 1,
+				speed: 1
+			});
+
+		});
+	</script>
+
+</body>
+</html>

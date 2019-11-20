@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>palyer</title>
+	<link rel="stylesheet" href="static/css/reset.css">
+	<style type="text/css">
+		.popup{
+			display: none;
+			background-color: #fff;
+		}
+		.popup-btn-close{
+			width: 20px;
+			height: 20px;
+			background-image: url(static/images/popup-btn-close.png);
+			background-repeat: no-repeat;
+			position: absolute;
+			right: 0;
+			top: -30px;
+		}
+		.popup-btn-close:hover{
+			background-position: 0 -20px;
+		}
+		.err a{
+			color: steelblue;
+		}
+		.err a:hover{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	
+	<button class="btn-trigger" data-url="http://cdn.longtugame.com/jymf/flv/160304.flv">点击</button>
+	<div class="popup popup-video">
+		<a href="javascript:;" class="popup-btn-close"></a>
+		<div id="video">
+			<div class="err">
+				<p>您还没有安装flash播放器,请点击<a href="http://www.adobe.com/go/getflash">这里</a>安装</p>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="static/lib/jquery.min.js"></script>
+	<script type="text/javascript" src="static/lib/swfobject.js"></script>
+	<script type="text/javascript" src="../src/js/sky.popup.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.popup-video').skyPopup({
+				btnTrigger: '.btn-trigger',
+				onBeforeShow: function(elem){
+					var url = $(elem).attr('data-url');
+
+					swfobject.flash('static/media/flvplayer.swf', 'video', 600, 300, {
+						vcastr_file: url,				//视频地址
+						IsAutoPlay: 1					//是否自动播放	
+					})
+				}
+			});
+		})
+	</script>
+</body>
+</html>

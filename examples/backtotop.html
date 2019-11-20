@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>back-to-top</title>
+	<link rel="stylesheet" href="static/css/reset.css">
+	<style type="text/css">
+		.panel p{
+			width: 150px;
+			margin: 0 auto;
+			text-align: center;
+		}
+		.panel p:nth-child(20n){
+			background-color: steelblue;
+			color: #fff;
+		}
+		.back-to-top{
+			display: none;
+			width: 50px;
+			height: 50px;
+			margin-left: 400px;
+			background: url(static/images/back-to-top.png) no-repeat;
+			cursor: pointer;
+			position: fixed;
+			left: 50%;
+			bottom: 100px;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="panel"></div>
+	<div class="back-to-top"></div>
+
+	<script type="text/javascript" src="static/lib/jquery.js"></script>
+	<script type="text/javascript" src="../src/js/sky.backtotop.js"></script>
+	<script type="text/javascript">
+
+		// 生成内容
+		function generate(selector, number){
+			var container = document.querySelector(selector);
+			var frag = document.createDocumentFragment();
+
+			for(var i = 0; i < number; i++){
+				var p = document.createElement('p');
+				p.innerHTML = '返回顶部' + i;
+				frag.appendChild(p);
+			}
+
+			container.appendChild(frag);
+		};
+
+		generate('.panel', 400);
+
+		
+		$('.back-to-top').skyBackToTop({
+			//是否自动显隐,
+			isAuto: true,					
+			duration: 800
+		});
+
+	</script>
+
+</body>
+</html>

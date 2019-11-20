@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>timer</title>
+	<link rel="stylesheet" href="static/css/reset.css">
+	<style type="text/css">
+		.timer{
+			width: 200px;
+			height: 50px;
+			line-height: 50px;
+			margin: 50px auto;
+			background-color: steelblue;
+			font-size: 20px;
+			color: #fff;
+			text-align: center;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="timer">获取验证码</div>
+
+	<script type="text/javascript" src="static/lib/jquery.min.js"></script>
+	<script type="text/javascript" src="../src/js/sky.timer.js"></script>
+	<script type="text/javascript">
+
+
+		// 是否验证成功
+		var isValid = true;
+
+		$('.timer').skyTimer({
+			// 时间-以秒为单位
+			time: 5,
+			// 开始前
+			onBeforeStart: function(){
+				var t = this;
+
+				if(!isValid){
+					alert('error');
+					return false;
+				}
+			},
+			// 开始后
+			onAfterStart: function(){
+				var t = this;
+
+				// 可用以ajax
+				window.setTimeout(function(){
+					alert('ajax');
+				}, 2000);
+			},
+			// 结束后
+			onAfterEnd: function(){
+				alert('end');
+			}
+		});
+	</script>
+
+</body>
+</html>
