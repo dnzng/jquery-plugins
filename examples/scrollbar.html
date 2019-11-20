@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>scrollbar</title>
 	<link rel="stylesheet" href="static/css/reset.css">
 	<style type="text/css">
-		.scrollbar-wrap{
+		.scrollbar-wrap {
 			padding: 50px 0;
 		}
-		.scrollbar-container{
+
+		.scrollbar-container {
 			width: 500px;
 			height: 300px;
 			margin: 0 auto 50px;
@@ -17,7 +19,7 @@
 			overflow: hidden;
 		}
 
-		.scrollbar-vertical .scrollbar-track{
+		.scrollbar-vertical .scrollbar-track {
 			width: 20px;
 			background-color: #000;
 			position: absolute;
@@ -25,7 +27,8 @@
 			top: 0;
 			bottom: 0;
 		}
-		.scrollbar-vertical .scrollbar-track .bar{
+
+		.scrollbar-vertical .scrollbar-track .bar {
 			background-color: steelblue;
 			cursor: pointer;
 			position: absolute;
@@ -34,7 +37,7 @@
 			top: 0;
 		}
 
-		.scrollbar-horizontal .scrollbar-track{
+		.scrollbar-horizontal .scrollbar-track {
 			height: 20px;
 			background-color: #000;
 			position: absolute;
@@ -42,7 +45,8 @@
 			right: 0;
 			bottom: 0;
 		}
-		.scrollbar-horizontal .scrollbar-track .bar{
+
+		.scrollbar-horizontal .scrollbar-track .bar {
 			background-color: steelblue;
 			cursor: pointer;
 			position: absolute;
@@ -50,39 +54,42 @@
 			top: 0;
 			bottom: 0;
 		}
-		
-		.scrollbar-panel{
+
+		.scrollbar-panel {
 			width: 100%;
 			height: 100%;
 			overflow: hidden;
 		}
 
-		.scrollbar-panel p:nth-child(10n){
+		.scrollbar-panel p:nth-child(10n) {
 			background-color: steelblue;
 			color: #fff;
 		}
-		
-		.scrollbar-vertical .scrollbar-panel{
+
+		.scrollbar-vertical .scrollbar-panel {
 			text-align: center;
 		}
-		.scrollbar-vertical .scrollbar-panel p{
+
+		.scrollbar-vertical .scrollbar-panel p {
 			display: block;
 		}
-		
-		.scrollbar-horizontal .scrollbar-panel{
+
+		.scrollbar-horizontal .scrollbar-panel {
 			white-space: nowrap;
 		}
-		.scrollbar-horizontal .scrollbar-panel p{
+
+		.scrollbar-horizontal .scrollbar-panel p {
 			display: inline-block;
 		}
 
-		.btn{
+		.btn {
 			text-align: center;
 		}
 	</style>
 </head>
+
 <body>
-	
+
 	<div class="scrollbar-wrap">
 		<div class="scrollbar-container scrollbar-vertical">
 			<div class="scrollbar-track"><span class="bar"></span></div>
@@ -95,8 +102,6 @@
 			<button class="btn-vertical-reset">重置</button>
 		</div>
 	</div>
-
-
 
 	<div class="scrollbar-wrap">
 		<div class="scrollbar-container scrollbar-horizontal">
@@ -116,11 +121,11 @@
 	<script type="text/javascript">
 
 		// 内容生成器
-		function generator(selector, number){
+		function generator(selector, number) {
 			var container = document.querySelector(selector);
 			var frag = document.createDocumentFragment();
 
-			for(var i = 0; i < number; i++){
+			for (var i = 0; i < number; i++) {
 				var p = document.createElement('p');
 				p.innerHTML = i;
 				frag.appendChild(p);
@@ -134,7 +139,7 @@
 		generator('.scrollbar-vertical .scrollbar-panel', num1);
 		generator('.scrollbar-horizontal .scrollbar-panel', num2);
 
-		
+
 
 
 		// 垂直
@@ -147,16 +152,16 @@
 			time: 90													//滑块滚动时间
 		});
 
-		$('.btn-vertical-add').on('click', function(){
-			$('.scrollbar-vertical .scrollbar-panel').append('<p>'+ (num1++) +'</p>');
+		$('.btn-vertical-add').on('click', function () {
+			$('.scrollbar-vertical .scrollbar-panel').append('<p>' + (num1++) + '</p>');
 			scrollbarVertical.updateLayout();
 		})
 
-		$('.btn-vertical-jump').on('click', function(){  
+		$('.btn-vertical-jump').on('click', function () {
 			scrollbarVertical.jump(200);
 		})
 
-		$('.btn-vertical-reset').on('click', function(){  
+		$('.btn-vertical-reset').on('click', function () {
 			scrollbarVertical.jump(0);
 		})
 
@@ -171,20 +176,21 @@
 			time: 90													//滑块滚动时间
 		});
 
-		$('.btn-horizontal-add').on('click', function(){   
-			$('.scrollbar-horizontal .scrollbar-panel').append('<p>'+ (num2++) +'</p>');
+		$('.btn-horizontal-add').on('click', function () {
+			$('.scrollbar-horizontal .scrollbar-panel').append('<p>' + (num2++) + '</p>');
 			scrollbar.updateLayout();
 		})
 
-		$('.btn-horizontal-jump').on('click', function(){  
+		$('.btn-horizontal-jump').on('click', function () {
 			scrollbar.jump(200);
 		})
 
-		$('.btn-horizontal-reset').on('click', function(){  
+		$('.btn-horizontal-reset').on('click', function () {
 			scrollbar.jump(0);
 		})
 
 	</script>
 
 </body>
+
 </html>

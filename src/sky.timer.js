@@ -2,11 +2,11 @@
  *  定时器
  */
 
-;(function(window, $){  
+; (function (window, $) {
   'use strict';
 
   // 是否是函数
-  var isFunction = function(fn){
+  var isFunction = function (fn) {
     return typeof fn === 'function';
   }
 
@@ -16,7 +16,7 @@
    * @param {[type]} elem    [元素节点]
    * @param {[type]} options [参数]
    */
-  function Timer(elem, options){
+  function Timer(elem, options) {
     var t = this;
 
     t.opts = $.extend(true, {}, Timer.defaultOpts, options || {});
@@ -32,7 +32,7 @@
   }
 
   // 初始化
-  Timer.prototype.initialize = function(){
+  Timer.prototype.initialize = function () {
     var t = this;
 
     // 原始文本
@@ -48,13 +48,13 @@
   }
 
   // 初始化事件
-  Timer.prototype.initEvents = function(){
+  Timer.prototype.initEvents = function () {
     var t = this;
 
-    t.$container.on('click.Timer', function(){
+    t.$container.on('click.Timer', function () {
 
       // 开始之前
-      if(t.excuteStack(t.stackBeforeStart) === false){
+      if (t.excuteStack(t.stackBeforeStart) === false) {
         return;
       }
 
@@ -64,18 +64,18 @@
   }
 
   // 开始
-  Timer.prototype.start = function(){
+  Timer.prototype.start = function () {
     var t = this;
 
     // 未结束之前，直接返回, 不继续向下执行
-    if(!t.isDone){
+    if (!t.isDone) {
       return;
     }
 
     t.isDone = false;
     t.$container.html(t.seconds + 's');
 
-    t.timer = window.setInterval(function(){ 
+    t.timer = window.setInterval(function () {
       t.tick.call(t);
     }, 1000);
 
@@ -84,17 +84,17 @@
   }
 
   // 停止
-  Timer.prototype.stop = function(){
+  Timer.prototype.stop = function () {
     var t = this;
 
     window.clearInterval(t.timer);
   }
 
   // tick
-  Timer.prototype.tick = function(){
+  Timer.prototype.tick = function () {
     var t = this;
 
-    if(t.seconds <= 0){
+    if (t.seconds <= 0) {
       // 恢复初始状态
       t.isDone = true;
       t.seconds = t.opts.time;
@@ -113,72 +113,69 @@
   }
 
   // 执行栈中的回调函数
-  Timer.prototype.excuteStack = function(stack){ 
+  Timer.prototype.excuteStack = function (stack) {
     var t = this;
 
-    for(var i = 0; i < stack.length; i++){
+    for (var i = 0; i < stack.length; i++) {
       var value = stack[i].call(t);
 
-      if(value === false){
+      if (value === false) {
         return false;
       }
     }
   }
 
   // 开始之前
-  Timer.prototype.onBeforeStart = function(callback){
+  Timer.prototype.onBeforeStart = function (callback) {
     var t = this;
 
-    if(!t.stackBeforeStart){
+    if (!t.stackBeforeStart) {
       t.stackBeforeStart = [];
     }
 
-    if(isFunction(callback)){
+    if (isFunction(callback)) {
       t.stackBeforeStart.push(callback);
     }
   }
 
   // 开始之后
-  Timer.prototype.onAfterStart = function(callback){
+  Timer.prototype.onAfterStart = function (callback) {
     var t = this;
 
-    if(!t.stackAfterStart){
+    if (!t.stackAfterStart) {
       t.stackAfterStart = [];
     }
 
-    if(isFunction(callback)){
+    if (isFunction(callback)) {
       t.stackAfterStart.push(callback);
     }
   }
 
   // 结束之后
-  Timer.prototype.onAfterEnd = function(callback){
+  Timer.prototype.onAfterEnd = function (callback) {
     var t = this;
 
-    if(!t.stackAfterEnd){
+    if (!t.stackAfterEnd) {
       t.stackAfterEnd = [];
     }
 
-    if(isFunction(callback)){
+    if (isFunction(callback)) {
       t.stackAfterEnd.push(callback);
     }
   }
 
   // 默认参数
   Timer.defaultOpts = {
-    // 时间-以秒为单位
-    time: 60,
-    // 开始前
-    onBeforeStart: null,
-    // 开始后
-    onAfterStart: null
+    time: 60,             // 时间-以秒为单位
+    onBeforeStart: null,  // 开始前
+    onAfterStart: null,   // 开始后
   }
 
 
 
   // 添加到jQuery原型上
-  $.fn.skyTimer = function(options){
-    if(this.length === 0){
+  $.fn.skyTimer = function (options) {
+    if (this.length === 0) {
       throw new Error('The elem is not exist!!!');
     }
 

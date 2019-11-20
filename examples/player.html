@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>palyer</title>
 	<link rel="stylesheet" href="static/css/reset.css">
 	<style type="text/css">
-		.popup{
+		.popup {
 			display: none;
 			background-color: #fff;
 		}
-		.popup-btn-close{
+
+		.popup-btn-close {
 			width: 20px;
 			height: 20px;
 			background-image: url(static/images/popup-btn-close.png);
@@ -18,19 +20,23 @@
 			right: 0;
 			top: -30px;
 		}
-		.popup-btn-close:hover{
+
+		.popup-btn-close:hover {
 			background-position: 0 -20px;
 		}
-		.err a{
+
+		.err a {
 			color: steelblue;
 		}
-		.err a:hover{
+
+		.err a:hover {
 			color: red;
 		}
 	</style>
 </head>
+
 <body>
-	
+
 	<button class="btn-trigger" data-url="http://cdn.longtugame.com/jymf/flv/160304.flv">点击</button>
 	<div class="popup popup-video">
 		<a href="javascript:;" class="popup-btn-close"></a>
@@ -45,10 +51,10 @@
 	<script type="text/javascript" src="static/lib/swfobject.js"></script>
 	<script type="text/javascript" src="../src/js/sky.popup.js"></script>
 	<script type="text/javascript">
-		$(document).ready(function(){
+		$(document).ready(function () {
 			$('.popup-video').skyPopup({
 				btnTrigger: '.btn-trigger',
-				onBeforeShow: function(elem){
+				onBeforeShow: function (elem) {
 					var url = $(elem).attr('data-url');
 
 					swfobject.flash('static/media/flvplayer.swf', 'video', 600, 300, {
@@ -60,4 +66,5 @@
 		})
 	</script>
 </body>
+
 </html>

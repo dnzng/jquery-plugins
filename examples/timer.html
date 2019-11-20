@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>timer</title>
 	<link rel="stylesheet" href="static/css/reset.css">
 	<style type="text/css">
-		.timer{
+		.timer {
 			width: 200px;
 			height: 50px;
 			line-height: 50px;
@@ -18,8 +19,9 @@
 		}
 	</style>
 </head>
+
 <body>
-	
+
 	<div class="timer">获取验证码</div>
 
 	<script type="text/javascript" src="static/lib/jquery.min.js"></script>
@@ -34,29 +36,30 @@
 			// 时间-以秒为单位
 			time: 5,
 			// 开始前
-			onBeforeStart: function(){
+			onBeforeStart: function () {
 				var t = this;
 
-				if(!isValid){
+				if (!isValid) {
 					alert('error');
 					return false;
 				}
 			},
 			// 开始后
-			onAfterStart: function(){
+			onAfterStart: function () {
 				var t = this;
 
 				// 可用以ajax
-				window.setTimeout(function(){
+				window.setTimeout(function () {
 					alert('ajax');
 				}, 2000);
 			},
 			// 结束后
-			onAfterEnd: function(){
+			onAfterEnd: function () {
 				alert('end');
 			}
 		});
 	</script>
 
 </body>
+
 </html>

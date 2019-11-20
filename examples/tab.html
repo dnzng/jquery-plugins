@@ -1,42 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>tab</title>
 	<link rel="stylesheet" href="static/css/reset.css">
 	<style type="text/css">
-		.tab-container{
+		.tab-container {
 			width: 500px;
 			margin: 50px auto 0;
 			border: 1px solid steelblue;
 		}
-		.tab-nav{
+
+		.tab-nav {
 			line-height: 30px;
 			border-bottom: 1px solid steelblue;
 			color: #fff;
 			text-align: center;
 		}
-		.tab-nav:after{
+
+		.tab-nav:after {
 			content: "";
 			display: table;
 			clear: both;
 		}
-		.tab-nav a{
+
+		.tab-nav a {
 			float: left;
 			width: 33.33%;
 			background-color: #000;
 		}
+
 		.tab-nav a.on,
-		.tab-nav a:hover{
+		.tab-nav a:hover {
 			background-color: orange;
 		}
 	</style>
 </head>
+
 <body>
-	
+
 	<div class="tab-container">
 		<div class="tab-nav">
-			<a href="javascript:;">nav1</a> 
+			<a href="javascript:;">nav1</a>
 			<a href="javascript:;">nav2</a>
 			<a href="javascript:;">nav3</a>
 		</div>
@@ -56,11 +62,12 @@
 			tabMain: '.tab-main',
 			active: 'on',
 			defaultIndex: 0,
-			onChange: function(obj){
+			onChange: function (obj) {
 				console.log(obj.activeIndex, obj.length);
 			}
 		})
 	</script>
 
 </body>
+
 </html>
