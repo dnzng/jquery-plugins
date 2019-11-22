@@ -100,7 +100,7 @@
   Select.prototype.listScrollEvent = function (event) {
     var t = this;
 
-    // 系数、滚动值	、当前值
+    // 系数、滚动值、当前值
     var k, delta, curr;
     var wheelEvent = 'wheel mousewheel DOMMouseScroll';
     var docWheelEvent = 'wheel.DocWheel mousewheel.DocWheel DOMMouseScroll.DocWheel';

@@ -130,11 +130,11 @@
 
   // 默认参数
   Marquee.defaultOpts = {
-    direction: 'left',	// 方向
-    spaceBetween: 10,		// 间隔
-    itemsPerView: 3,		// 显示个数
-    speed: 1,						// 速度
-    time: 30						// 每隔time移动一个speed,单位ms
+    direction: 'left',  // 方向
+    spaceBetween: 10,   // 间隔
+    itemsPerView: 3,    // 显示个数
+    speed: 1,           // 速度
+    time: 30            // 每隔 time 移动一个 speed (单位 ms)
   };
 
 

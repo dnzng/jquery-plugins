@@ -98,7 +98,7 @@
   BackToTop.defaultOpts = {
     event: 'click',
     isAuto: true,     // 移动速度,越大速度越慢	
-    k: 1,	            // 系数，屏幕高的倍数					
+    k: 1,             // 系数，屏幕高的倍数					
     duration: 800,    // 运动时间	
     easing: 'swing',  // 运动效果，复杂的运动需要插件		
   };

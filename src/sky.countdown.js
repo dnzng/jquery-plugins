@@ -98,7 +98,7 @@
     delay: 1000
   };
 
-  // 挂载到 jQuery 原型上
-  $.fn.skyCountdown = countdown;
+  // 挂载到 jQuery 上
+  $.skyCountdown = countdown;
 
 })(jQuery);

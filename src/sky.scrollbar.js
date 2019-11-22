@@ -263,12 +263,12 @@
 
   // 默认参数
   ScrollBar.defaultOpts = {
-    direction: 'vertical',				// 方向：horizontal | vertical
-    panel: '.scrollbar-panel',		// 内容面板
-    track: '.scrollbar-track',		// 滑道
-    bar: '.bar',									// 滑块
-    speed: 30,										// 滚轮每次滚动距离
-    time: 100										  // 滑块滚动时间
+    direction: 'vertical',        // 方向：horizontal | vertical
+    panel: '.scrollbar-panel',    // 内容面板
+    track: '.scrollbar-track',    // 滑道
+    bar: '.bar',                  // 滑块
+    speed: 30,                    // 滚轮每次滚动距离
+    time: 100                     // 滑块滚动时间
   };
 
 
