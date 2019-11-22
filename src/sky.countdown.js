@@ -2,23 +2,23 @@
  * 
  * countdonw(options)
  * options:
- * 		type: server | local, 时间类型,
- * 		time: 时间段, 如：'2017/04/25 00:00:01 - 2017/04/25 00:00:02',
- *   	onTick: 每次间隔，执行的函数，参数分别为 （天, 时, 分, 秒）,
- *   	onEnd: 结束时执行的回调函数，
- *   	delay: 间隔时间，默认 1000ms, 即 1s
+ *    type: server | local, 时间类型,
+ *    time: 时间段, 如：'2017/04/25 00:00:01 - 2017/04/25 00:00:02',
+ *    onTick: 每次间隔，执行的函数，参数分别为 （天, 时, 分, 秒）,
+ *    onEnd: 结束时执行的回调函数，
+ *    delay: 间隔时间，默认 1000ms, 即 1s
  *
  *
  * 例子：
  * $.skyCountdown({
- * 		type: 'server',
- * 		time: '2017/04/25 00:00:01 - 2017/04/25 00:00:02',
- * 		onTick: function(day, hour, minute, second, isEnd){
- * 			document.body.innerHTML = day + '天' + hour + '时' + minute + '分' + second + '秒';
- * 		},
- * 		onEnd: function(){
- * 			console.log('It's over.');
- * 		}
+ *    type: 'server',
+ *    time: '2017/04/25 00:00:01 - 2017/04/25 00:00:02',
+ *    onTick: function(day, hour, minute, second, isEnd){
+ *      document.body.innerHTML = day + '天' + hour + '时' + minute + '分' + second + '秒';
+ *    },
+ *    onEnd: function(){
+ *      console.log('It's over.');
+ *    }
  * })
  */
 

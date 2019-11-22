@@ -224,22 +224,22 @@
 
   // 默认参数
   Slider.defaultOpts = {
-    effect: 'fade',								// 效果  fade|scroll
-    defaultIndex: 0,							// 默认下标
-    slidesPerView: 1,							// 每屏显示个数
-    wrapper: '.slider-wrapper',		// slide容器
-    slide: '.slider-slide',				// slide
-    btnPrev: null,								// 上一个按钮	
-    btnNext: null,								// 下一个按钮
-    eventType: 'mouseover',				// 指示器事件
-    indicator: null,							// 指示器容器
-    indicatorChildTag: 'a',				// 指示器容器子标签
-    dot: '.slider-dot',						// 指示器子元素类名
-    active: 'on',								  // 指示器当前类名
-    autoPlay: true,								// 是否自动播放
-    autoArrowVisible: false,			// 按钮是否自动显示
-    autoDelay: 2500,							// 切换时间
-    speed: 500									  // 变化速度
+    effect: 'fade',               // 效果  fade|scroll
+    defaultIndex: 0,              // 默认下标
+    slidesPerView: 1,             // 每屏显示个数
+    wrapper: '.slider-wrapper',   // slide容器
+    slide: '.slider-slide',       // slide
+    btnPrev: null,                // 上一个按钮	
+    btnNext: null,                // 下一个按钮
+    eventType: 'mouseover',       // 指示器事件
+    indicator: null,              // 指示器容器
+    indicatorChildTag: 'a',       // 指示器容器子标签
+    dot: '.slider-dot',           // 指示器子元素类名
+    active: 'on',                 // 指示器当前类名
+    autoPlay: true,               // 是否自动播放
+    autoArrowVisible: false,      // 按钮是否自动显示
+    autoDelay: 2500,              // 切换时间
+    speed: 500                    // 变化速度
   };
 
 

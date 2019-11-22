@@ -134,13 +134,13 @@
 
   // 默认参数
   Slidebar.defaultOpts = {
-    eventType: 'click',				// 事件类型	[hover, click]
-    switcher: '.switcher',		// 开关选择器
-    switchOn: 'switch-off',		// 开关打开时状态
-    switchOff: 'switch-on',		// 开关关闭时状态
-    hasPadding: true,					// 切换时, 移动的距离是否包含内边距和边框
-    isShow: true,							// 是否显示
-    speed: 300								// 动画时长
+    eventType: 'click',       // 事件类型	[hover, click]
+    switcher: '.switcher',    // 开关选择器
+    switchOn: 'switch-off',   // 开关打开时状态
+    switchOff: 'switch-on',   // 开关关闭时状态
+    hasPadding: true,         // 切换时, 移动的距离是否包含内边距和边框
+    isShow: true,             // 是否显示
+    speed: 300                // 动画时长
   }
 
   //挂载到jquery对象
