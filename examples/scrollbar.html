@@ -2,194 +2,194 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<title>scrollbar</title>
-	<link rel="stylesheet" href="static/css/reset.css">
-	<style type="text/css">
-		.scrollbar-wrap {
-			padding: 50px 0;
-		}
+  <meta charset="UTF-8">
+  <title>scrollbar</title>
+  <link rel="stylesheet" href="static/css/reset.css">
+  <style type="text/css">
+    .scrollbar-wrap {
+      padding: 50px 0;
+    }
 
-		.scrollbar-container {
-			width: 500px;
-			height: 300px;
-			margin: 0 auto 50px;
-			border: 1px solid steelblue;
-			position: relative;
-			overflow: hidden;
-		}
+    .scrollbar-container {
+      width: 500px;
+      height: 300px;
+      margin: 0 auto 50px;
+      border: 1px solid steelblue;
+      position: relative;
+      overflow: hidden;
+    }
 
-		.scrollbar-vertical .scrollbar-track {
-			width: 20px;
-			background-color: #000;
-			position: absolute;
-			right: 0;
-			top: 0;
-			bottom: 0;
-		}
+    .scrollbar-vertical .scrollbar-track {
+      width: 20px;
+      background-color: #000;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
 
-		.scrollbar-vertical .scrollbar-track .bar {
-			background-color: steelblue;
-			cursor: pointer;
-			position: absolute;
-			left: 0;
-			right: 0;
-			top: 0;
-		}
+    .scrollbar-vertical .scrollbar-track .bar {
+      background-color: steelblue;
+      cursor: pointer;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+    }
 
-		.scrollbar-horizontal .scrollbar-track {
-			height: 20px;
-			background-color: #000;
-			position: absolute;
-			left: 0;
-			right: 0;
-			bottom: 0;
-		}
+    .scrollbar-horizontal .scrollbar-track {
+      height: 20px;
+      background-color: #000;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
 
-		.scrollbar-horizontal .scrollbar-track .bar {
-			background-color: steelblue;
-			cursor: pointer;
-			position: absolute;
-			left: 0;
-			top: 0;
-			bottom: 0;
-		}
+    .scrollbar-horizontal .scrollbar-track .bar {
+      background-color: steelblue;
+      cursor: pointer;
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+    }
 
-		.scrollbar-panel {
-			width: 100%;
-			height: 100%;
-			overflow: hidden;
-		}
+    .scrollbar-panel {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
 
-		.scrollbar-panel p:nth-child(10n) {
-			background-color: steelblue;
-			color: #fff;
-		}
+    .scrollbar-panel p:nth-child(10n) {
+      background-color: steelblue;
+      color: #fff;
+    }
 
-		.scrollbar-vertical .scrollbar-panel {
-			text-align: center;
-		}
+    .scrollbar-vertical .scrollbar-panel {
+      text-align: center;
+    }
 
-		.scrollbar-vertical .scrollbar-panel p {
-			display: block;
-		}
+    .scrollbar-vertical .scrollbar-panel p {
+      display: block;
+    }
 
-		.scrollbar-horizontal .scrollbar-panel {
-			white-space: nowrap;
-		}
+    .scrollbar-horizontal .scrollbar-panel {
+      white-space: nowrap;
+    }
 
-		.scrollbar-horizontal .scrollbar-panel p {
-			display: inline-block;
-		}
+    .scrollbar-horizontal .scrollbar-panel p {
+      display: inline-block;
+    }
 
-		.btn {
-			text-align: center;
-		}
-	</style>
+    .btn {
+      text-align: center;
+    }
+  </style>
 </head>
 
 <body>
 
-	<div class="scrollbar-wrap">
-		<div class="scrollbar-container scrollbar-vertical">
-			<div class="scrollbar-track"><span class="bar"></span></div>
-			<div class="scrollbar-panel"></div>
-		</div>
+  <div class="scrollbar-wrap">
+    <div class="scrollbar-container scrollbar-vertical">
+      <div class="scrollbar-track"><span class="bar"></span></div>
+      <div class="scrollbar-panel"></div>
+    </div>
 
-		<div class="btn">
-			<button class="btn-vertical-add">增加</button>
-			<button class="btn-vertical-jump">跳到具体位置</button>
-			<button class="btn-vertical-reset">重置</button>
-		</div>
-	</div>
+    <div class="btn">
+      <button class="btn-vertical-add">增加</button>
+      <button class="btn-vertical-jump">跳到具体位置</button>
+      <button class="btn-vertical-reset">重置</button>
+    </div>
+  </div>
 
-	<div class="scrollbar-wrap">
-		<div class="scrollbar-container scrollbar-horizontal">
-			<div class="scrollbar-track"><span class="bar"></span></div>
-			<div class="scrollbar-panel"></div>
-		</div>
+  <div class="scrollbar-wrap">
+    <div class="scrollbar-container scrollbar-horizontal">
+      <div class="scrollbar-track"><span class="bar"></span></div>
+      <div class="scrollbar-panel"></div>
+    </div>
 
-		<div class="btn">
-			<button class="btn-horizontal-add">增加</button>
-			<button class="btn-horizontal-jump">跳到具体位置</button>
-			<button class="btn-horizontal-reset">重置</button>
-		</div>
-	</div>
+    <div class="btn">
+      <button class="btn-horizontal-add">增加</button>
+      <button class="btn-horizontal-jump">跳到具体位置</button>
+      <button class="btn-horizontal-reset">重置</button>
+    </div>
+  </div>
 
-	<script type="text/javascript" src="static/lib/jquery.min.js"></script>
-	<script type="text/javascript" src="../src/js/sky.scrollbar.js"></script>
-	<script type="text/javascript">
+  <script type="text/javascript" src="static/lib/jquery.min.js"></script>
+  <script type="text/javascript" src="../src/js/sky.scrollbar.js"></script>
+  <script type="text/javascript">
 
-		// 内容生成器
-		function generator(selector, number) {
-			var container = document.querySelector(selector);
-			var frag = document.createDocumentFragment();
+    // 内容生成器
+    function generator(selector, number) {
+      var container = document.querySelector(selector);
+      var frag = document.createDocumentFragment();
 
-			for (var i = 0; i < number; i++) {
-				var p = document.createElement('p');
-				p.innerHTML = i;
-				frag.appendChild(p);
-			}
+      for (var i = 0; i < number; i++) {
+        var p = document.createElement('p');
+        p.innerHTML = i;
+        frag.appendChild(p);
+      }
 
-			container.appendChild(frag);
-		}
+      container.appendChild(frag);
+    }
 
-		// 生成个数
-		var num1 = 50, num2 = 100;
-		generator('.scrollbar-vertical .scrollbar-panel', num1);
-		generator('.scrollbar-horizontal .scrollbar-panel', num2);
-
-
+    // 生成个数
+    var num1 = 50, num2 = 100;
+    generator('.scrollbar-vertical .scrollbar-panel', num1);
+    generator('.scrollbar-horizontal .scrollbar-panel', num2);
 
 
-		// 垂直
-		var scrollbarVertical = $('.scrollbar-vertical').skyScrollBar({
-			direction: 'vertical',										//方向：vertical|horizontal
-			panel: '.scrollbar-panel',									//内容面板
-			track: '.scrollbar-track',									//滚动条
-			bar: '.bar',												//滑块
-			speed: 50,													//滚轮每次滚动距离
-			time: 90													//滑块滚动时间
-		});
-
-		$('.btn-vertical-add').on('click', function () {
-			$('.scrollbar-vertical .scrollbar-panel').append('<p>' + (num1++) + '</p>');
-			scrollbarVertical.updateLayout();
-		})
-
-		$('.btn-vertical-jump').on('click', function () {
-			scrollbarVertical.jump(200);
-		})
-
-		$('.btn-vertical-reset').on('click', function () {
-			scrollbarVertical.jump(0);
-		})
 
 
-		// 水平
-		var scrollbar = $('.scrollbar-horizontal').skyScrollBar({
-			direction: 'horizontal',									//方向：vertical|horizontal
-			panel: '.scrollbar-panel',									//内容面板
-			track: '.scrollbar-track',									//滚动条
-			bar: '.bar',												//滑块
-			speed: 50,													//滚轮每次滚动距离
-			time: 90													//滑块滚动时间
-		});
+    // 垂直
+    var scrollbarVertical = $('.scrollbar-vertical').skyScrollBar({
+      direction: 'vertical',										//方向：vertical|horizontal
+      panel: '.scrollbar-panel',									//内容面板
+      track: '.scrollbar-track',									//滚动条
+      bar: '.bar',												//滑块
+      speed: 50,													//滚轮每次滚动距离
+      time: 90													//滑块滚动时间
+    });
 
-		$('.btn-horizontal-add').on('click', function () {
-			$('.scrollbar-horizontal .scrollbar-panel').append('<p>' + (num2++) + '</p>');
-			scrollbar.updateLayout();
-		})
+    $('.btn-vertical-add').on('click', function () {
+      $('.scrollbar-vertical .scrollbar-panel').append('<p>' + (num1++) + '</p>');
+      scrollbarVertical.updateLayout();
+    })
 
-		$('.btn-horizontal-jump').on('click', function () {
-			scrollbar.jump(200);
-		})
+    $('.btn-vertical-jump').on('click', function () {
+      scrollbarVertical.jump(200);
+    })
 
-		$('.btn-horizontal-reset').on('click', function () {
-			scrollbar.jump(0);
-		})
+    $('.btn-vertical-reset').on('click', function () {
+      scrollbarVertical.jump(0);
+    })
 
-	</script>
+
+    // 水平
+    var scrollbar = $('.scrollbar-horizontal').skyScrollBar({
+      direction: 'horizontal',									//方向：vertical|horizontal
+      panel: '.scrollbar-panel',									//内容面板
+      track: '.scrollbar-track',									//滚动条
+      bar: '.bar',												//滑块
+      speed: 50,													//滚轮每次滚动距离
+      time: 90													//滑块滚动时间
+    });
+
+    $('.btn-horizontal-add').on('click', function () {
+      $('.scrollbar-horizontal .scrollbar-panel').append('<p>' + (num2++) + '</p>');
+      scrollbar.updateLayout();
+    })
+
+    $('.btn-horizontal-jump').on('click', function () {
+      scrollbar.jump(200);
+    })
+
+    $('.btn-horizontal-reset').on('click', function () {
+      scrollbar.jump(0);
+    })
+
+  </script>
 
 </body>
 

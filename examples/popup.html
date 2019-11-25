@@ -2,110 +2,110 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<title>popup</title>
-	<link rel="stylesheet" href="static/css/reset.css">
-	<style type="text/css">
-		body {
-			padding-top: 50px;
-			text-align: center;
-		}
+  <meta charset="UTF-8">
+  <title>popup</title>
+  <link rel="stylesheet" href="static/css/reset.css">
+  <style type="text/css">
+    body {
+      padding-top: 50px;
+      text-align: center;
+    }
 
-		.popup {
-			display: none;
-			width: 500px;
-			height: 300px;
-			background-color: steelblue;
-			color: #fff;
-			position: fixed;
-			left: 50%;
-			top: 50%;
-			z-index: 99999;
-			transform: translate3d(-50%, -50%, 0);
-		}
+    .popup {
+      display: none;
+      width: 500px;
+      height: 300px;
+      background-color: steelblue;
+      color: #fff;
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      z-index: 99999;
+      transform: translate3d(-50%, -50%, 0);
+    }
 
-		.popup-btn-close {
-			width: 30px;
-			height: 30px;
-			background-color: #000;
-			position: absolute;
-			right: 0;
-			top: 0;
-		}
+    .popup-btn-close {
+      width: 30px;
+      height: 30px;
+      background-color: #000;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
 
-		.popup-mask {
-			display: none;
-			background-color: rgba(0, 0, 0, 0.6);
-			position: fixed;
-			left: 0;
-			right: 0;
-			top: 0;
-			bottom: 0;
-			z-index: 99998;
-		}
-	</style>
+    .popup-mask {
+      display: none;
+      background-color: rgba(0, 0, 0, 0.6);
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 99998;
+    }
+  </style>
 </head>
 
 <body>
-	<button class="btn-normal">正常</button>
-	<button class="btn-01">btn1</button>
+  <button class="btn-normal">正常</button>
+  <button class="btn-01">btn1</button>
 
-	<div class="popup popup-normal" id="popup">
-		<a href="javascript:;" class="popup-btn-close"></a>
-		<div class="main">normal</div>
-	</div>
-	<div class="popup popup-01">
-		<a href="javascript:;" class="popup-btn-close"></a>
-		<div class="main">main1</div>
-	</div>
+  <div class="popup popup-normal" id="popup">
+    <a href="javascript:;" class="popup-btn-close"></a>
+    <div class="main">normal</div>
+  </div>
+  <div class="popup popup-01">
+    <a href="javascript:;" class="popup-btn-close"></a>
+    <div class="main">main1</div>
+  </div>
 
-	<script type="text/javascript" src="static/lib/jquery.min.js"></script>
-	<script type="text/javascript" src="../src/js/sky.popup.js"></script>
-	<script type="text/javascript">
+  <script type="text/javascript" src="static/lib/jquery.min.js"></script>
+  <script type="text/javascript" src="../src/js/sky.popup.js"></script>
+  <script type="text/javascript">
 
-		// normal
-		var popNormal = $('.popup-normal').skyPopup({
-			btnTrigger: '.btn-normal',
-			btnClose: '.popup-btn-close',
-			onAfterShow: function () {
-				console.log('onAfterShow-2')
-			},
-			onAfterHide: function () {
-				console.log('onAfterHide-4')
-			}
-		});
+    // normal
+    var popNormal = $('.popup-normal').skyPopup({
+      btnTrigger: '.btn-normal',
+      btnClose: '.popup-btn-close',
+      onAfterShow: function () {
+        console.log('onAfterShow-2')
+      },
+      onAfterHide: function () {
+        console.log('onAfterHide-4')
+      }
+    });
 
-		popNormal.onBeforeShow(function () {
-			console.log('onBeforeShow-1');
-		});
+    popNormal.onBeforeShow(function () {
+      console.log('onBeforeShow-1');
+    });
 
-		popNormal.onBeforeHide(function () {
-			console.log('onBeforeShow-3');
-		});
+    popNormal.onBeforeHide(function () {
+      console.log('onBeforeShow-3');
+    });
 
-		// popup-01
-		var pop01 = $('.popup-01').skyPopup({
-			btnTrigger: 'btn-01',
-			btnClose: '.popup-btn-close'
-		});
+    // popup-01
+    var pop01 = $('.popup-01').skyPopup({
+      btnTrigger: 'btn-01',
+      btnClose: '.popup-btn-close'
+    });
 
-		pop01.show(function () {
-			alert('afterShow');
-		});
+    pop01.show(function () {
+      alert('afterShow');
+    });
 
-		window.setTimeout(function () {
-			pop01.hide(function () {
-				alert('afterHide');
-			});
-		}, 2000)
+    window.setTimeout(function () {
+      pop01.hide(function () {
+        alert('afterHide');
+      });
+    }, 2000)
 
-			//两个弹窗 切换
-		/*popNormal.show();
-		window.setTimeout(function(){
-			pop01.show();
-		}, 5000)*/
+      //两个弹窗 切换
+    /*popNormal.show();
+    window.setTimeout(function(){
+      pop01.show();
+    }, 5000)*/
 
-	</script>
+  </script>
 
 </body>
 

@@ -2,123 +2,123 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<title>slider</title>
-	<link rel="stylesheet" href="static/css/reset.css">
-	<style type="text/css">
-		.slider-container {
-			width: 400px;
-			height: 267px;
-			margin: 50px auto 0;
-			overflow: hidden;
-			position: relative;
-		}
+  <meta charset="UTF-8">
+  <title>slider</title>
+  <link rel="stylesheet" href="static/css/reset.css">
+  <style type="text/css">
+    .slider-container {
+      width: 400px;
+      height: 267px;
+      margin: 50px auto 0;
+      overflow: hidden;
+      position: relative;
+    }
 
-		.slider-wrapper {
-			width: 100%;
-			height: 100%;
-		}
+    .slider-wrapper {
+      width: 100%;
+      height: 100%;
+    }
 
-		.slider-slide {
-			width: 100%;
-			height: 100%;
-			position: absolute;
-			top: 0;
-			left: 0;
-		}
+    .slider-slide {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
 
-		.slider-slide img {
-			width: 100%;
-		}
+    .slider-slide img {
+      width: 100%;
+    }
 
-		.slider-btn {
-			width: 30px;
-			height: 50px;
-			margin-top: -25px;
-			background-color: #000;
-			cursor: pointer;
-			position: absolute;
-			top: 50%;
-			z-index: 10;
-		}
+    .slider-btn {
+      width: 30px;
+      height: 50px;
+      margin-top: -25px;
+      background-color: #000;
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      z-index: 10;
+    }
 
-		.slider-btn-prev {
-			left: 0;
-		}
+    .slider-btn-prev {
+      left: 0;
+    }
 
-		.slider-btn-next {
-			right: 0;
-		}
+    .slider-btn-next {
+      right: 0;
+    }
 
-		.slider-indicator {
-			text-align: center;
-			position: absolute;
-			left: 0;
-			right: 0;
-			bottom: 10px;
-			z-index: 10;
-		}
+    .slider-indicator {
+      text-align: center;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 10px;
+      z-index: 10;
+    }
 
-		.slider-indicator .slider-dot {
-			display: inline-block;
-			width: 12px;
-			height: 12px;
-			margin-left: 8px;
-			background-color: #fff;
-			border-radius: 50%;
-			cursor: pointer;
-		}
+    .slider-indicator .slider-dot {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin-left: 8px;
+      background-color: #fff;
+      border-radius: 50%;
+      cursor: pointer;
+    }
 
-		.slider-indicator .slider-dot:first-child {
-			margin-left: 0;
-		}
+    .slider-indicator .slider-dot:first-child {
+      margin-left: 0;
+    }
 
-		.slider-indicator .slider-dot.on {
-			background-color: steelblue;
-		}
-	</style>
+    .slider-indicator .slider-dot.on {
+      background-color: steelblue;
+    }
+  </style>
 </head>
 
 <body>
 
-	<div class="slider-container">
-		<div class="slider-wrapper">
-			<div class="slider-slide"><img src="static/images/01.jpg"></div>
-			<div class="slider-slide"><img src="static/images/02.jpg"></div>
-			<div class="slider-slide"><img src="static/images/03.jpg"></div>
-			<div class="slider-slide"><img src="static/images/04.jpg"></div>
-		</div>
-		<div class="slider-indicator"></div>
-		<div class="slider-btn slider-btn-prev"></div>
-		<div class="slider-btn slider-btn-next"></div>
-	</div>
+  <div class="slider-container">
+    <div class="slider-wrapper">
+      <div class="slider-slide"><img src="static/images/01.jpg"></div>
+      <div class="slider-slide"><img src="static/images/02.jpg"></div>
+      <div class="slider-slide"><img src="static/images/03.jpg"></div>
+      <div class="slider-slide"><img src="static/images/04.jpg"></div>
+    </div>
+    <div class="slider-indicator"></div>
+    <div class="slider-btn slider-btn-prev"></div>
+    <div class="slider-btn slider-btn-next"></div>
+  </div>
 
-	<script type="text/javascript" src="static/lib/jquery.min.js"></script>
-	<script type="text/javascript" src="../src/js/sky.slider.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function () {
-			$('.slider-container').skySlider({
-				effect: 'fade',							//效果  fade|scroll
+  <script type="text/javascript" src="static/lib/jquery.min.js"></script>
+  <script type="text/javascript" src="../src/js/sky.slider.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('.slider-container').skySlider({
+        effect: 'fade',							//效果  fade|scroll
 
-				wapper: '.slider-wrapper',				//slide容器
-				slide: '.slider-slide',					//slide
+        wapper: '.slider-wrapper',				//slide容器
+        slide: '.slider-slide',					//slide
 
-				btnPrev: '.slider-btn-prev',			//上一个按钮	
-				btnNext: '.slider-btn-next',			//下一个按钮
+        btnPrev: '.slider-btn-prev',			//上一个按钮	
+        btnNext: '.slider-btn-next',			//下一个按钮
 
-				eventType: 'mouseover',					//指示器效果
-				indicator: '.slider-indicator',			//指示器容器
-				indicatorChildTag: 'a',					//指示器容器子标签
-				dot: '.slider-dot',						//指示器子元素类名
-				active: 'on',							//指示器当前类名
+        eventType: 'mouseover',					//指示器效果
+        indicator: '.slider-indicator',			//指示器容器
+        indicatorChildTag: 'a',					//指示器容器子标签
+        dot: '.slider-dot',						//指示器子元素类名
+        active: 'on',							//指示器当前类名
 
-				autoPlay: true,							//是否自动播放
-				autoArrowVisible: false,				//按钮是否自动显示
-				autoDelay: 2000,						//切换时间
-				speed: 500								//变化速度
-			})
-		})
-	</script>
+        autoPlay: true,							//是否自动播放
+        autoArrowVisible: false,				//按钮是否自动显示
+        autoDelay: 2000,						//切换时间
+        speed: 500								//变化速度
+      })
+    })
+  </script>
 
 </body>
 
